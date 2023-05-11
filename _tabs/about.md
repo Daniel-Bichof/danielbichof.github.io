@@ -1,0 +1,40 @@
+---
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 4
+title: About Me
+---
+
+> This page is still under construction!
+{: .prompt-warning }
+
+<img src="/assets/img/avatar/capybara.jpg" width=150px>
+
+### Content in English (US)
+
+1. Youtube Channels
+  - [John Hammond](https://www.youtube.com/@_JohnHammond): hacking in general.
+  - [LiveOverflow](https://www.youtube.com/@LiveOverflow): reverse engineering, beginner to expert.
+
+2. Conferences
+  - [DEFCON](https://defcon.org/): the biggest hacker conference in the world.
+  - [BlackHat](https://www.blackhat.com/): does anyone still remember the ATM jackpot?
+
+### Conteúdo em Português (BR)
+
+1. Canais do Youtube
+  - [Gabriel Pato](https://www.youtube.com/@GabrielPato): análise de invasões, casos reais.
+  - [Hacking na Web](https://www.youtube.com/@HackingnaWeb): resoluções de CTF, técnicas de Pentest.
+  - [Solyd OffSec](https://www.youtube.com/@solyd): tem um curso introdutório excelente de pentest.
+
+2. Conferências:
+  - [DEFCON POA](https://www.instagram.com/defconpoa/): nossa versão tupiniquim da DEFCON.
+  - [Roadsec](https://www.roadsec.com.br/): maior conferência da América Latina.
+  - [CryptoRave](https://twitter.com/cryptoravebr): conferencia sobre privacidade.
+
+### Extensions:
+
+- [User-Agent Switcher](https://addons.mozilla.org/en-US/firefox/addon/uaswitcher/)
+- [Dark Reader](https://darkreader.org/)
+- [Wappalyzer](https://www.wappalyzer.com/)
+
