@@ -21,7 +21,7 @@ timezone: America/Sao_Paulo
 
 title: Daniel's hack # the main title
 
-tagline: "Hacking and tech stuffs by Bichof"
+tagline: "Hacking, CyberSec and tech stuffs"
 
 description: >- # used by seo meta and the atom feed
   "A place to learn about hacking and technology"
@@ -162,6 +162,7 @@ defaults:
       path: assets/img/favicons
     values:
       swcache: true
+      image: true
   - scope:
       path: assets/js/dist
     values:
