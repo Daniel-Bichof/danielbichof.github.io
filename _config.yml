@@ -30,10 +30,10 @@ description: >- # used by seo meta and the atom feed
 url: "https://danielbichof.github.io"
 
 github:
-  username: Daniel-Bichof # change to your github username
+  username: DanielBichof # change to your github username
 
 instagram:
-  username: bichof.sh # change to your twitter username
+  username: daniel.bichof # change to your twitter username
 
 social:
   # Change to your full name.
@@ -43,7 +43,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
      # change to your twitter homepage
-    - https://github.com/Danie-Bichof # change to your github homepage
+    - https://github.com/DanieBichof # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/
@@ -93,7 +93,7 @@ comments:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: Daniel-Bichof/danielbichof.github.io
+    repo: DanielBichof/danielbichof.github.io
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
