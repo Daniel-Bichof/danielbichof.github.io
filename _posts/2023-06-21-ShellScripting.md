@@ -3,7 +3,7 @@ layout: post
 title: Shell Scripting
 date: 2023-06-21
 categories: [programming, bash]
-tags: [bash, coding, shell, programming]
+tags: [bash, coding, 'shell scripting', programming]
 ---
 
 ---
@@ -32,14 +32,6 @@ testearray=(laranja maça morango)
 echo ${testearray[n]}
 ```
 
-## Funções
-
-```
-nome() {
-	(...)
-}
-```
-
 ## Arquivo de configuração
 
 ```sh
@@ -56,6 +48,38 @@ function mkcd() {
 	cd $1
 }
 ```
+
+### Arquivos .sh
+Exitem diversos shells, alguns exemplos são `sh`, `fish`, `zsh`, `tcsh`, cada um com suas peculiaridades, porém o mais difundido é o `bash`. Esse será a base para os conhecimentos compartilhados nesse artigo. 
+
+Recomendo a utilização do shell [fish](https://fishshell.com/docs/current/index.html) que contem algumas funcionalidades a mais, porém não é 100% compatível com um código em bash. Você pode ver a documentação do fish shell com o comando `help expand` se estiver executando `fish` em seu terminal
+
+No inicio de um arquivo **.sh** é comum adicionarmos um comentário para dizermos qual shell deve executar o programa
+
+```bash 
+#!/bin/bash
+```
+
+Note que é adicionado um "!" ponto de exclamação no comentário, em seguida o caminho do programa bash no linux. o mesmo serviria para executar um programa com zsh 
+
+
+```bash 
+#!/bin/zsh
+```
+
+Ao criar um programa .sh precisamos dar permissão de execução do sistema. No linux fazemos isso com `chmod`
+
+```sh
+$ chmod +x file.sh
+```
+Parâmetro +x adiciona permissão de execução do sistema ao arquivo.   
+
+Da mesma forma que a primeira linha comentada do programa diz qual shell deve executar o arquivo, é possível passar essa informação diretamente por linha de comando. Exemplo:
+
+```bash
+$ bash ./file.sh
+```
+Dessa forma, você força qual shell irá executar o programa o arquivo não precisará ter permissão de execução, evitando assim adicionar esse atributo com `chmod +x`
 
 ### Cálculos matemáticos
 
@@ -310,225 +334,26 @@ while [ $counter -le 5 ]; do
 done
 ```
 
-## Parâmetros de linha de comando
-
-./ex.sh param1 param2 ....
-$0 $1 $2
-
-$# - numero de parametros
-
-#### Shift
-
-reduz ou passa o parametro para uma variável anterior, ex, valor de $3 passa para => $2
-
-##### Comando read
-
-```bash
-read nome -p "nome: "
-echo $nome
-```
-
-<span><h2>whiptail</h2> caixa de dialogo</span>
-
-```bash
-whiptail --title "Caixa" --msgbox "caixa" --fb 10 50
-```
-
-## funções
-
-```bash
-function nome_função {
-	comandos
-}
-
-#ou
-
-nome_funcao(){
-	comandos
-}
-
-```
-
-## VARIÁVEIS
-
-Exemplos:
-
-ENV
-PATH
-HOME
-USERNAME
-TERM
-RANDOM
-
-### Array de ambiente
-
-```bash
-testearray=(laranja maça morango)
-```
+Para efeito de demostração, um código `fish shell` que funcione da mesma forma que o código anterior
 
 ```sh
-echo ${testearray[n]}
-```
+#!/bin/fish
 
-## Funções
+set counter 0
+while ! [ $counter -gt 5 ]
+  echo "Count: $counter"
+  set counter (math $counter + 1)
+end
 
-```
-nome() {
-	(...)
-}
-```
+echo -e "\n"
 
-## Arquivo de configuração
+set counter 0
 
-![[Pasted image 20230619094814.png]]
+while [ $counter -le 5 ]; 
+	echo "Count: $counter"
+	set counter (math $counter + 1 )
+end
 
-### Cálculos matemáticos
-
-```sh
-var=$[ operação ]
-```
-
-```sh
-var1=$[ 3 + 6 ]
-
-echo $var1 # output: 9
-```
-
-- bc
-
-### Condicional
-
-```bash
-if comando
-then
-	comandos
-fi
-
-#ou
-
-if comando; then
-	comandos
-else
-	comandos
-fi
-
-
-
-if comando1; then
-	comandos
-elif comando2
-then
-	comandos processameto
-elif comando3; then
-	comandos processamento
-fi
-
-
-
-```
-
-### Test
-
-```zsh
-if test CONDIÇÃO
-then
-	comandos
-fi
-
-# ou
-
-if [CONDIÇÃO]
-then
-	comandos
-fi
-```
-
-![[Pasted image 20230620091847.png]]
-
-- _test_ não suporta numeros float
-
-Exemplo
-
-```zsh
-
-#!/bin/bash
-
-n1=10
-n2=12
-
-if [ $n1 -eq $n2 ]
-then
-     echo "$n1 = $n2"
-elif [ $n1 -gt $n2 ]
-then
-	echo "$n1 > $n2"
-elif [ $n1 -lt $n2 ]
-then
-    echo "$n1 < $n2"
-else
-    echo "erro"
-fi
-```
-
-![[Pasted image 20230620092940.png]]
-
-### Comparação de arquivos no comando teste
-
-![[Pasted image 20230620093504.png]]
-
-![[Pasted image 20230620094047.png]]
-
-```bash
-#!/bin/bash
-
-file=$HOME/.bashrc
-if [ $USER = daniel ] && [ -w file ]
-then
-	echo "$USER tem permição para alterar aquivo $file"
-else
-	echo "$USER não pode alterar $file"
-fi
-```
-
-### Comando case
-
-```bash
-#!/bin/bash
-
-case <variavel> in
-	valor)
-		comando1;;
-	valor2)
-		comandos2;;
-	*)
-		comandos-padrão;;
-esac
-```
-
-## Estrutura de repetição
-
-for, while, until
-
-```bash
-for valor in lista
-do
-	comandos
-done
-```
-
-exemplo
-
-```bash
- #!/bin/zsh
-
-lista=("Laranja" Maçã mamão morango "leite condensado")
-n=1
-
-for item in $lista
-do
-    echo $n " - " $item
-    n=$[ $n + 1 ] #ou n=$(($n+1))
-done
 ```
 
 ## Parâmetros de linha de comando
