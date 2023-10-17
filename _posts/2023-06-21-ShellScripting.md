@@ -3,13 +3,47 @@ layout: post
 title: Shell Scripting
 date: 2023-06-21
 categories: [programming, bash]
-tags: [bash, coding, 'shell scripting', programming]
+tags: [bash, coding, "shell scripting", programming]
 ---
 
 ---
 
 > Artigo ainda em construção, releve os erros. Talvez algumas informações estejam incompletas
 > {: .prompt-warning }
+
+# <img src="/assets/img/posts_img/full_colored_light.png">
+
+### Arquivos .sh
+
+Exitem diversos shells, alguns exemplos são `sh`, `fish`, `zsh`, `tcsh`, cada um com suas peculiaridades, porém o mais difundido é o `bash`. Esse será a base para os conhecimentos compartilhados nesse artigo.
+
+No inicio de um arquivo **.sh** é comum adicionarmos um comentário chamado de "shabang" para dizermos qual interpretador shell deve executar o programa
+
+```bash
+#!/bin/bash
+```
+
+Um exemplo utilizando outro shell
+
+```bash
+#!/bin/fish
+```
+
+Ao criar um programa .sh precisamos dar permissão de execução do sistema. No Linux fazemos isso com `chmod`
+
+```sh
+$ chmod +x file.sh
+```
+
+Parâmetro +x adiciona permissão de execução do sistema ao arquivo.
+
+Da mesma forma que a primeira linha comentada do programa diz qual shell deve executar o arquivo, é possível passar essa informação diretamente por linha de comando. Exemplo:
+
+```bash
+$ bash ./file.sh
+```
+
+Dessa forma, você força qual shell irá executar o programa o arquivo não precisará ter permissão de execução, evitando assim adicionar esse atributo com `chmod +x`
 
 ## VARIÁVEIS
 
@@ -48,38 +82,6 @@ function mkcd() {
 	cd $1
 }
 ```
-
-### Arquivos .sh
-Exitem diversos shells, alguns exemplos são `sh`, `fish`, `zsh`, `tcsh`, cada um com suas peculiaridades, porém o mais difundido é o `bash`. Esse será a base para os conhecimentos compartilhados nesse artigo. 
-
-Recomendo a utilização do shell [fish](https://fishshell.com/docs/current/index.html) que contem algumas funcionalidades a mais, porém não é 100% compatível com um código em bash. Você pode ver a documentação do fish shell com o comando `help expand` se estiver executando `fish` em seu terminal
-
-No inicio de um arquivo **.sh** é comum adicionarmos um comentário para dizermos qual shell deve executar o programa
-
-```bash 
-#!/bin/bash
-```
-
-Note que é adicionado um "!" ponto de exclamação no comentário, em seguida o caminho do programa bash no linux. o mesmo serviria para executar um programa com zsh 
-
-
-```bash 
-#!/bin/zsh
-```
-
-Ao criar um programa .sh precisamos dar permissão de execução do sistema. No linux fazemos isso com `chmod`
-
-```sh
-$ chmod +x file.sh
-```
-Parâmetro +x adiciona permissão de execução do sistema ao arquivo.   
-
-Da mesma forma que a primeira linha comentada do programa diz qual shell deve executar o arquivo, é possível passar essa informação diretamente por linha de comando. Exemplo:
-
-```bash
-$ bash ./file.sh
-```
-Dessa forma, você força qual shell irá executar o programa o arquivo não precisará ter permissão de execução, evitando assim adicionar esse atributo com `chmod +x`
 
 ### Cálculos matemáticos
 
@@ -214,7 +216,7 @@ Referência [https://www.vivaolinux.com.br/dica/Conhecendo-o-test](https://www.v
 - -x arquivo - Verdadeiro se o arquivo for executável.
 - -z s - (zero length) Verdadeiro se a string for igual a zero ou não possuir nenhum valor atribuído. Ex. variável nula ou arquivo vazio.
 
-Comando que podem ser usados com `test`
+Outros operadores mais comuns
 
 - s1 = s2 - Verdadeiro se a string s1 é igual a s2.
 - s1 != s2 - Verdadeiro se a string s1 for diferente de s2.
@@ -223,9 +225,11 @@ Comando que podem ser usados com `test`
 
 Pode-se usar a palavra `test` para testar um comando,
 
-- O comando `test` não suporta números float
+- OBS: O comando `test` não suporta números float
 
-Exemplo
+**Todas essas informações podem ser encontradas com o comando `man bash`** e pesquisar esses operadores digitando `/` e digitando `CONDITIONAL EXPRESSIONS`
+
+Exemplos
 
 ```zsh
 
@@ -349,7 +353,7 @@ echo -e "\n"
 
 set counter 0
 
-while [ $counter -le 5 ]; 
+while [ $counter -le 5 ];
 	echo "Count: $counter"
 	set counter (math $counter + 1 )
 end
@@ -394,3 +398,22 @@ nome_funcao(){
 }
 
 ```
+
+#### Recomendações
+
+**English**
+
+- [60 Linux Commands you NEED to know (in 10 minutes)](https://youtu.be/gd7BXuUQ91w?si=JAsB6F2310c8t_ps)
+
+- [You need to learn BASH Scripting RIGHT NOW!! - NetworkChuck](https://www.youtube.com/playlist?list=PLIhvC56v63IKioClkSNDjW7iz-6TFvLwS)
+
+- [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners
+](https://youtu.be/ZtqBQ68cfJc?si=0s6wR5sICExGjBXt)
+
+- [Bash Scripting Tutorial for Beginners](https://youtu.be/tK9Oc6AEnR4?si=eAo6BqWEgINXJTyi)
+
+- [the Linux File System explained in 1,233 seconds](https://youtu.be/A3G-3hp88mo?si=NXIHiYDammdEJzRE)
+
+**Português**
+
+[Curso de Shell Scripting - Programação no Linux](https://youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs&si=s3eUptImCkALoF4S)
