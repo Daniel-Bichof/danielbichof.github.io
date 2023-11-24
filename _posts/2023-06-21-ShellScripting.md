@@ -407,8 +407,7 @@ nome_funcao(){
 
 - [You need to learn BASH Scripting RIGHT NOW!! - NetworkChuck](https://www.youtube.com/playlist?list=PLIhvC56v63IKioClkSNDjW7iz-6TFvLwS)
 
-- [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners
-](https://youtu.be/ZtqBQ68cfJc?si=0s6wR5sICExGjBXt)
+- [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners](https://youtu.be/ZtqBQ68cfJc?si=0s6wR5sICExGjBXt)
 
 - [Bash Scripting Tutorial for Beginners](https://youtu.be/tK9Oc6AEnR4?si=eAo6BqWEgINXJTyi)
 
