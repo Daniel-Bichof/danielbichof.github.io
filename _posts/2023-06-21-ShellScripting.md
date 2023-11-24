@@ -170,7 +170,7 @@ fi
 
 # ou
 
-if [CONDIÇÃO]
+if [ CONDIÇÃO ]
 then
 	comandos
 fi
@@ -416,4 +416,7 @@ nome_funcao(){
 
 **Português**
 
-[Curso de Shell Scripting - Programação no Linux](https://youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs&si=s3eUptImCkALoF4S)
+[O que é Shell? (Software) - Diolinux Explica](https://youtu.be/zskFbzsZu8s?si=oKA6ncYc-BpNj-d6)
+[Curso de Shell Scripting - Programação no Linux](https://youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs&si=2ObT0BSwmupIPy8_)
+[30 Comandos do Terminal Linux BÁSICOS](https://youtu.be/QZ2nyxzZXPY?si=D67tZvJN2gY2SY7Z)
+
