@@ -378,7 +378,8 @@ read nome -p "nome: "
 echo $nome
 ```
 
-<span><h2>whiptail</h2> caixa de dialogo</span>
+### whiptail 
+Caixa de dialogo
 
 ```bash
 whiptail --title "Caixa" --msgbox "caixa" --fb 10 50
